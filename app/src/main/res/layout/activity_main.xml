@@ -3,24 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
 
+    android:background="@drawable/bg_calc"
     android:orientation="vertical">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="2"
         android:orientation="horizontal">
 
 
         <TextView
-            android:layout_width="411dp"
+            android:id="@+id/logoText"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#ADFFEB3B"
-            android:text="CASIO"
+            android:background="#673AB7"
+            android:text="@irada.vip"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="#C59C23"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -30,17 +32,17 @@
     <LinearLayout
 
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
 
         <TextView
+            android:id="@+id/inputView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="end|center_vertical"
             android:paddingEnd="10dp"
-            android:text="234234234"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="60sp" />
 
 
@@ -55,28 +57,27 @@
 
         <Button
 
-            android:id="@+id/C"
+            android:id="@+id/c"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:width="0dp"
-            android:backgroundTint="#8BC34A"
+            android:backgroundTint="#8FB167"
             android:text="C"
-
             android:textColor="@color/white"
             android:textSize="20dp">
 
         </Button>
 
         <Button
-            android:id="@+id/Backspace"
+            android:id="@+id/backspace"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:width="0dp"
-            android:backgroundTint="#BF3161"
+            android:backgroundTint="#BA607E"
             android:text="Backspace"
             android:textSize="20dp">
 
@@ -94,13 +95,13 @@
 
 
         <Button
-            android:id="@+id/Number7"
+            android:id="@+id/number7"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:width="0dp"
-            android:backgroundTint="#2196F3"
+            android:backgroundTint="#558CB8"
             android:shadowColor="#37272525"
             android:text="7"
             android:textSize="24dp">
@@ -108,13 +109,13 @@
         </Button>
 
         <Button
-            android:id="@+id/Number8"
+            android:id="@+id/number8"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:width="0dp"
-            android:backgroundTint="#2196F3"
+            android:backgroundTint="#558CB8"
             android:text="8"
             android:textSize="24dp">
 
@@ -122,38 +123,39 @@
 
 
         <Button
-            android:id="@+id/Number9"
+            android:id="@+id/number9"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:width="0dp"
-            android:backgroundTint="#2196F3"
+            android:backgroundTint="#558CB8"
             android:text="9"
             android:textSize="24dp">
 
         </Button>
 
         <Button
+            android:id="@+id/division"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:width="0dp"
-            android:backgroundTint="#BF3161"
+            android:backgroundTint="#BA607E"
             android:text="/"
             android:textSize="24dp">
 
         </Button>
 
         <Button
-            android:id="@+id/Button_procent"
+            android:id="@+id/percent"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:width="0dp"
-            android:backgroundTint="#BF3161"
+            android:backgroundTint="#BA607E"
             android:text="%"
             android:textSize="24dp">
 
@@ -169,26 +171,26 @@
 
 
         <Button
-            android:id="@+id/Number4"
+            android:id="@+id/number4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:width="0dp"
-            android:backgroundTint="#2196F3"
+            android:backgroundTint="#558CB8"
             android:text="4"
             android:textSize="24dp">
 
         </Button>
 
         <Button
-            android:id="@+id/Number5"
+            android:id="@+id/number5"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:width="0dp"
-            android:backgroundTint="#2196F3"
+            android:backgroundTint="#558CB8"
             android:text="5"
             android:textSize="24dp">
 
@@ -196,39 +198,40 @@
 
 
         <Button
-            android:id="@+id/Number6"
+            android:id="@+id/number6"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:width="0dp"
-            android:backgroundTint="#2196F3"
+            android:backgroundTint="#558CB8"
             android:text="6"
             android:textSize="24dp">
 
         </Button>
 
         <Button
-            android:id="@+id/Button_minus"
+            android:id="@+id/minus"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:width="0dp"
-            android:backgroundTint="#BF3161"
+            android:backgroundTint="#BA607E"
             android:text="-"
-            android:textSize="34sp"
+            android:textSize="24sp"
             android:textStyle="bold">
 
         </Button>
 
         <Button
+            android:id="@+id/multiplication"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:width="0dp"
-            android:backgroundTint="#BF3161"
+            android:backgroundTint="#BA607E"
             android:text="x"
             android:textSize="24dp">
 
@@ -244,26 +247,26 @@
 
 
         <Button
-            android:id="@+id/Number1"
+            android:id="@+id/number1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:width="0dp"
-            android:backgroundTint="#2196F3"
+            android:backgroundTint="#558CB8"
             android:text="1"
             android:textSize="24dp">
 
         </Button>
 
         <Button
-            android:id="@+id/Number2"
+            android:id="@+id/number2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:width="0dp"
-            android:backgroundTint="#2196F3"
+            android:backgroundTint="#558CB8"
             android:text="2"
             android:textSize="24dp">
 
@@ -271,27 +274,27 @@
 
 
         <Button
-            android:id="@+id/Number3"
+            android:id="@+id/number3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
-            android:backgroundTint="#2196F3"
+            android:backgroundTint="#558CB8"
             android:text="3"
             android:textSize="24dp">
 
         </Button>
 
         <Button
-            android:id="@+id/Button_Plus"
+            android:id="@+id/plus"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="2.05"
             android:width="0dp"
-            android:backgroundTint="#8BC34A"
+            android:backgroundTint="#8FB167"
             android:text="+"
-            android:textSize="34sp">
+            android:textSize="24sp">
 
         </Button>
 
@@ -306,53 +309,54 @@
 
 
         <Button
-            android:id="@+id/DoubleZero"
+            android:id="@+id/doubleZero"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:width="0dp"
-            android:backgroundTint="#2196F3"
+            android:backgroundTint="#558CB8"
             android:text="00"
             android:textSize="24dp">
 
         </Button>
 
         <Button
-            android:id="@+id/Zero"
+            android:id="@+id/zero"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:width="0dp"
-            android:backgroundTint="#2196F3"
+            android:backgroundTint="#558CB8"
             android:text="0"
             android:textSize="24dp">
 
         </Button>
 
         <Button
-            android:id="@+id/Dauth"
+            android:id="@+id/point"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:width="0dp"
-            android:backgroundTint="#BF3161"
+            android:backgroundTint="#BA607E"
             android:text="."
-            android:textSize="34sp">
+            android:textSize="24sp">
 
         </Button>
 
         <Button
+            android:id="@+id/enter"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="2.05"
             android:width="0dp"
-            android:backgroundTint="#BF3161"
+            android:backgroundTint="#BA607E"
             android:text="="
-            android:textSize="28dp">
+            android:textSize="24dp">
 
         </Button>
 
@@ -370,6 +374,7 @@
 
 
 
-</LinearLayout>
+
+
 
 
