@@ -7,11 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    String firstValue;
-    String secondValue;
+    String firstValue = "";
+    String secondValue = "";
     String tempValue = "";
+    String currentOperation = "";
 
 
     @Override
@@ -84,41 +87,69 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         TextView textView = findViewById(R.id.inputView);
+        TextView textOperation = findViewById(R.id.inputOperation);
 
         switch (v.getId()) {
             case R.id.number1:
+                if (tempValue.equals("0")) {
+                    tempValue = "";
+                }
                 tempValue = tempValue + "1";
                 textView.setText(tempValue);
                 break;
             case R.id.number2:
+                if (tempValue.equals("0")) {
+                    tempValue = "";
+                }
                 tempValue = tempValue + "2";
                 textView.setText(tempValue);
                 break;
             case R.id.number3:
+                if (tempValue.equals("0")) {
+                    tempValue = "";
+                }
                 tempValue = tempValue + "3";
                 textView.setText(tempValue);
                 break;
             case R.id.number4:
+                if (tempValue.equals("0")) {
+                    tempValue = "";
+                }
                 tempValue = tempValue + "4";
                 textView.setText(tempValue);
                 break;
             case R.id.number5:
+                if (tempValue.equals("0")) {
+                    tempValue = "";
+                }
                 tempValue = tempValue + "5";
                 textView.setText(tempValue);
                 break;
             case R.id.number6:
+                if (tempValue.equals("0")) {
+                    tempValue = "";
+                }
                 tempValue = tempValue + "6";
                 textView.setText(tempValue);
                 break;
             case R.id.number7:
+                if (tempValue.equals("0")) {
+                    tempValue = "";
+                }
                 tempValue = tempValue + "7";
                 textView.setText(tempValue);
                 break;
             case R.id.number8:
+                if (tempValue.equals("0")) {
+                    tempValue = "";
+                }
                 tempValue = tempValue + "8";
                 textView.setText(tempValue);
                 break;
             case R.id.number9:
+                if (tempValue.equals("0")) {
+                    tempValue = "";
+                }
                 tempValue = tempValue + "9";
                 textView.setText(tempValue);
                 break;
@@ -153,19 +184,103 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.plus:
-                textView.setText("+");
+                if (tempValue == "") {
+                    currentOperation = "+";
+                    textOperation.setText("+");
+                    break;
+                }
+                if (firstValue != "") {
+                    secondValue = String.copyValueOf(tempValue.toCharArray());
+                    tempValue = "";
+                    firstValue = calculate(firstValue, secondValue, currentOperation);
+                    secondValue = "";
+                    currentOperation = "+";
+                    textOperation.setText("+");
+                    textView.setText(firstValue);
+                    break;
+                }
+                //Первый ввод
+                firstValue = String.copyValueOf(tempValue.toCharArray());
+                tempValue = "";
+                currentOperation = "+";
+                textOperation.setText("+");
                 break;
             case R.id.minus:
-                textView.setText("-");
+                if (tempValue == "") {
+                    currentOperation = "-";
+                    textOperation.setText("-");
+                    break;
+                }
+                if (firstValue != "") {
+                    secondValue = String.copyValueOf(tempValue.toCharArray());
+                    tempValue = "";
+                    firstValue = calculate(firstValue, secondValue, currentOperation);
+                    secondValue = "";
+                    currentOperation = "-";
+                    textOperation.setText("-");
+                    textView.setText(firstValue);
+                    break;
+                }
+                //Первый ввод
+                firstValue = String.copyValueOf(tempValue.toCharArray());
+                tempValue = "";
+                currentOperation = "-";
+                textOperation.setText("-");
                 break;
             case R.id.division:
-                textView.setText(":");
+                if (tempValue == "") {
+                    currentOperation = "/";
+                    textOperation.setText("/");
+                    break;
+                }
+                if (firstValue != "") {
+                    secondValue = String.copyValueOf(tempValue.toCharArray());
+                    tempValue = "";
+                    firstValue = calculate(firstValue, secondValue, currentOperation);
+                    secondValue = "";
+                    currentOperation = "/";
+                    textOperation.setText("/");
+                    textView.setText(firstValue);
+                    break;
+                }
+                //Первый ввод
+                firstValue = String.copyValueOf(tempValue.toCharArray());
+                tempValue = "";
+                currentOperation = "/";
+                textOperation.setText("/");
                 break;
             case R.id.multiplication:
-                textView.setText("x");
+                if (tempValue == "") {
+                    currentOperation = "x";
+                    textOperation.setText("x");
+                    break;
+                }
+                if (firstValue != "") {
+                    secondValue = String.copyValueOf(tempValue.toCharArray());
+                    tempValue = "";
+                    firstValue = calculate(firstValue, secondValue, currentOperation);
+                    secondValue = "";
+                    currentOperation = "x";
+                    textOperation.setText("x");
+                    textView.setText(firstValue);
+                    break;
+                }
+                //Первый ввод
+                firstValue = String.copyValueOf(tempValue.toCharArray());
+                tempValue = "";
+                currentOperation = "x";
+                textOperation.setText("x");
                 break;
             case R.id.enter:
-                textView.setText("=");
+                if (firstValue != "") {
+                    if (secondValue == "") {
+                        secondValue = String.copyValueOf(tempValue.toCharArray());
+                    }
+                    tempValue = "";
+                    firstValue = calculate(firstValue, secondValue, currentOperation);
+                    textView.setText(firstValue);
+                    break;
+                }
                 break;
             case R.id.point:
                 if (tempValue.length() == 0) {
@@ -180,15 +295,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.percent:
-                textView.setText("%");
+                //textView.setText("%");
                 break;
 
-//            case R.id.backspace:
-//
-//                break;
+
+
+            case R.id.backspace:
+                    if (tempValue == "0")
+                        break;
+                    if (tempValue.length() >= 1)
+                    {
+                        StringBuilder sb = new StringBuilder(tempValue);
+                        sb.deleteCharAt(tempValue.length() - 1);
+                        tempValue = sb.toString();
+                        if (tempValue.length() == 0)
+                            tempValue = "0";
+                        textView.setText(tempValue);
+                    }
+
+                break;
+
+
             case R.id.c:
                 tempValue = "";
-                textView.setText(tempValue);
+                firstValue = "";
+                secondValue = "";
+                textOperation.setText("");
+                currentOperation = "";
+                textView.setText("");
                 break;
 //
             default:
@@ -198,5 +332,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
        }
 
+    }
+
+    private String calculate(String firstValue, String secondValue, String currentOperation) {
+        float firstValueF;
+        float secondValueF;
+        float resultF;
+        String result = "0";
+        firstValueF = Float.parseFloat(firstValue);
+        secondValueF = Float.parseFloat(secondValue);
+        switch (currentOperation) {
+            case "+":
+                resultF = firstValueF + secondValueF;
+                result = Float.toString(resultF);
+                break;
+            case "-":
+                resultF = firstValueF - secondValueF;
+                result = Float.toString(resultF);
+                break;
+            case "x":
+                resultF = firstValueF * secondValueF;
+                result = Float.toString(resultF);
+                break;
+            case "/":
+                resultF = firstValueF / secondValueF;
+                result = Float.toString(resultF);
+                break;
+        }
+        return result;
     }
 }

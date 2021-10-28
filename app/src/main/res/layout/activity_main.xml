@@ -37,11 +37,21 @@
 
 
         <TextView
+            android:id="@+id/inputOperation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="end|center_vertical"
+            android:paddingEnd="10dp"
+            android:textColor="@color/black"
+            android:layout_weight="5"
+            android:textSize="60sp" />
+        <TextView
             android:id="@+id/inputView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="end|center_vertical"
             android:paddingEnd="10dp"
+            android:layout_weight="1"
             android:textColor="@color/black"
             android:textSize="60sp" />
 
@@ -156,7 +166,7 @@
             android:layout_weight="1"
             android:width="0dp"
             android:backgroundTint="#BA607E"
-            android:text="%"
+            android:text=""
             android:textSize="24dp">
 
         </Button>
