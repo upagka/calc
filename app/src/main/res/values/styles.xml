@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="littleButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:width">0dp</item>
+        <item name="android:textSize">24dp</item>
+        <item name="android:backgroundTint">#558CB8</item>
+    </style>
+
+    <style name="littleFuncBtn" parent="littleButton">
+        <item name="android:backgroundTint">#BA607E</item>
+    </style>
+
+    <style name="bigButton" parent="littleFuncBtn">
+        <item name="android:layout_weight">2.05</item>
+    </style>
+</resources>
