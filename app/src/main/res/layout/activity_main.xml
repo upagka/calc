@@ -16,14 +16,21 @@
 
         <TextView
             android:id="@+id/logoText"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:layout_weight="6"
             android:text="@string/logoText"
             android:textAlignment="center"
             android:textColor="#C59C23"
             android:textSize="@dimen/logoTextSize"
             android:textStyle="bold" />
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Switch" />
 
 
     </LinearLayout>

@@ -1,6 +1,7 @@
 package vip.irada.calc;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import android.os.Bundle;
 import android.view.View;
@@ -20,7 +21,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.ThemeBlack);
         setContentView(R.layout.activity_main);
+
+        findViewById(R.id.switch1).setOnClickListener(v -> {
+            recreate();
+        });
+
 
         Button number1 = findViewById(R.id.number1);
         number1.setOnClickListener(this);
@@ -67,9 +74,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button minus = findViewById(R.id.minus);
         minus.setOnClickListener(this);
 
-        Button percent = findViewById(R.id.percent);
-        percent.setOnClickListener(this);
-
         Button enter = findViewById(R.id.enter);
         enter.setOnClickListener(this);
 
@@ -81,6 +85,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button multiplication = findViewById(R.id.multiplication);
         multiplication.setOnClickListener(this);
+
+
+
+
     }
 
 
@@ -292,10 +300,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     tempValue = tempValue + ".";
                     textView.setText(tempValue);
                 }
-                break;
-
-            case R.id.percent:
-                //textView.setText("%");
                 break;
 
 
