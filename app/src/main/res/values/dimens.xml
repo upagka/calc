@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="backspaceTextSize">20sp</dimen>
+    <dimen name="inputTextSize">60sp</dimen>
+    <dimen name="inputPaddingRight">10dp</dimen>
+    <dimen name="logoTextSize">16sp</dimen>
+</resources>
